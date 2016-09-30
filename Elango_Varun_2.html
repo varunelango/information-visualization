@@ -1,0 +1,39 @@
+<html>
+<head>
+
+</head>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript">
+function addCountry(){
+	 var li = document.createElement("li");
+	 var cname = document.getElementById("name");
+	 li.innerHTML = cname.value;
+	 document.getElementById("list").appendChild(li);
+	 cname = "";
+}
+$(document).ready(function(){
+
+$.getJSON("https://raw.githubusercontent.com/CristianFelix/infoviz/master/gapminder.json", function (data) {
+	 $.each(data, function(i, country){
+	 		var li = document.createElement("li");
+	 		li.innerHTML = country.name;
+	 		document.getElementById("list").appendChild(li);
+            console.log(name.name);
+        });
+
+});
+});
+</script>
+<div class = "container">
+<h1 style = "background-color:black; color:white;">Gapiminder Health and Wealth</h1>
+<h2>Countries</h2>
+<ul id= 'list' > 
+</ul>
+</div>
+
+</body>
+</html>
